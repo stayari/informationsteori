@@ -6,8 +6,6 @@ class node:
         self.right_child = None
         self.parent = None  # pointer to parent node in tree
 
-
-
 class hoffman_tree:
     def __init__(self):
         self.node_list = []
@@ -40,6 +38,7 @@ class hoffman_tree:
         self.node_list.append(new_node)
 
     def get_hoffman_tree(self):
+        # When only one node left, return tree
         if len(self.node_list) < 2:
             return self.node_list.pop()
         else:
@@ -47,20 +46,18 @@ class hoffman_tree:
             self.sort()
             return self.get_hoffman_tree()
 
-
-
     def get_encoding_table(self, tree):
         if tree != None:
             self.encoding_table = []
-            self._print_tree(tree, '')
+            self._get_encoding_table(tree, '')
             return self.encoding_table
 
-    def _print_tree(self, cur_node, code):
+    def _get_encoding_table(self, cur_node, code):
         if cur_node != None:
-            self._print_tree(cur_node.left_child, code + '1')
+            self._get_encoding_table(cur_node.left_child, code + '1')
             if cur_node.name != 'node':
                 self.encoding_table.append([cur_node.name, code])
-            self._print_tree(cur_node.right_child, code + '0')
+            self._get_encoding_table(cur_node.right_child, code + '0')
         
     def get_my_key(self, obj):
         return obj.value
