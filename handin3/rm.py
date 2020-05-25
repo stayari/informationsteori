@@ -58,11 +58,6 @@ class RM:
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-    reed_muller = RM(1,3)
-    print(reed_muller.g(1,3))
-    
-=======
     reed_muller = RM()
     x11, x12, x21, x22= reed_muller.g(1,3)
     print(x11)
@@ -71,5 +66,4 @@ if __name__ == '__main__':
     print(x22)
     #print(np.matrix())
 
->>>>>>> 5b5f2d9d0733a25d237e6ccb1101f74484cc44b0
 
