@@ -20,8 +20,8 @@ class RM:
         elif r == m:
             return  self._identity(pow(2,m))
         else:
-            return [self._g(r,m-1), self._g(r,m-1),
-                            [0,         self._g(r-1,m-1)]]
+            return [[self._g(r,m-1), self._g(r,m-1)],
+                    [0,         self._g(r-1,m-1)]]
 
     
     def _identity(self, n):
@@ -39,6 +39,6 @@ class RM:
 
 if __name__ == '__main__':
     reed_muller = RM(1,3)
-    print(str(reed_muller.g(1,3)))
+    print(reed_muller.g(1,3))
     
 
